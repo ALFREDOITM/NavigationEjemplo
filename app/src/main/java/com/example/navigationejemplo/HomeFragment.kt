@@ -23,8 +23,13 @@ class HomeFragment : Fragment() {
         binding.buttonHomeToInside.setOnClickListener{
             //Toast.makeText(context, "prueba", Toast.LENGTH_SHORT).show()
             //navController.navigate(R.id.action_homeFragment_to_insideHome)
-            val testArgument = "desde el home"
-            val directions = HomeFragmentDirections.actionHomeFragmentToInsideHome(testArgument)
+            val nombre = binding.campoNombre.text.toString()
+            val apellidoP = binding.campoAPaterno.text.toString()
+            val apellidoM = binding.campoAMaterno.text.toString()
+            val usuario = binding.campoUsuario.text.toString()
+            val correo = binding.campoCorreo.text.toString()
+            val array1 = arrayOf(nombre, apellidoP, apellidoM, usuario, correo)
+            val directions = HomeFragmentDirections.actionHomeFragmentToInsideHome(array1.joinToString())
             navController.navigate(directions)
         }
 
